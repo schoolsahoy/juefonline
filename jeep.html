@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEEP — Jain Educational Entrepreneurship Program | JUEF</title>
+  <meta name="description" content="JEEP: A lightweight entrepreneurship program for Jain couples who want to build Shraman schools. Cohort 1 starts June 2026. Apply now.">
+
+  <meta property="og:title" content="JEEP — Build a School. Build Capable Humans.">
+  <meta property="og:description" content="Join 20-30 carefully selected Jain couples building the schools India needs. Husband and wife participate together. Cohort 1 starts June 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://juefonline.org/jeep.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* JEEP-specific styles that extend the design system */
+    .value-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: var(--space-xl);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .value-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .value-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+    .value-card:hover::after { transform: scaleX(1); }
+    .value-card__number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .value-card h3 { font-size: 1rem; margin-bottom: var(--space-xs); }
+    .value-card p { font-size: 0.88rem; color: var(--text-light); margin: 0; }
+
+    .journey-step {
+      display: flex;
+      gap: var(--space-xl);
+      align-items: flex-start;
+      padding: var(--space-xl) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .journey-step:last-child { border-bottom: none; }
+    .journey-step__number {
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(26,107,94,0.3);
+    }
+    .journey-step h3 { margin-bottom: var(--space-xs); font-size: 1.1rem; }
+    .journey-step p { color: var(--text-light); margin: 0; font-size: 0.95rem; }
+
+    .apply-form {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: var(--space-2xl);
+      max-width: 640px;
+      box-shadow: var(--shadow-lg);
+    }
+    .apply-form .form-group label { color: var(--text); }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+
+    @media (max-width: 768px) {
+      .form-row { grid-template-columns: 1fr; }
+      .journey-step { flex-direction: column; gap: var(--space-md); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">JUEF<span>online</span></a>
+      <ul class="nav__links">
+        <li><a href="pages/framework.html">Framework</a></li>
+        <li class="nav__dropdown">
+          <a href="pages/framework.html" class="nav__dropdown-trigger">Schools</a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="pages/kalash.html">Kalash School <span class="nav__dropdown-meta">Nursery – Class II</span></a></li>
+            <li><a href="pages/padam.html">Padam School <span class="nav__dropdown-meta">Class III – VIII</span></a></li>
+            <li><a href="pages/shikhar.html">Shikhar School <span class="nav__dropdown-meta">Class IX – XII</span></a></li>
+          </ul>
+        </li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/blog.html">Insights</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+        <li><a href="pages/contribute.html">Partner</a></li>
+        <li><a href="pages/give.html">Contribute</a></li>
+        <li><a href="jeep.html" class="btn btn--secondary btn--small">Join JEEP</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== JEEP HERO (cinematic) ===== -->
+  <section class="cinema cinema--tall cinema--center section--gradient">
+    <div class="cinema__content">
+      <p class="label">Jain Educational Entrepreneurship Program</p>
+      <h1 style="color: var(--white); font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.08; margin-bottom: var(--space-lg);">Build a School.<br>Build <span style="background: linear-gradient(135deg, var(--secondary-light), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Capable Humans.</span></h1>
+      <p>A lightweight entrepreneurship program for Jain couples who want to build and run Shraman schools. Husband and wife participate together. Build something meaningful as a team.</p>
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; margin-top: var(--space-xl);">
+        <a href="#apply" class="btn btn--secondary btn--large">Apply for Cohort 1</a>
+        <a href="#how-it-works" class="btn btn--ghost btn--large">How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEY NUMBERS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--4">
+        <div class="value-card">
+          <div class="value-card__number">Comprehensive</div>
+          <h3>Preparation</h3>
+          <p>A purposeful entrepreneurship program designed for couples ready to build schools</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__number">2</div>
+          <h3>Partners Together</h3>
+          <p>Husband and wife participate as a team. Education is a family mission.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__number">20&ndash;30</div>
+          <h3>Founding Couples</h3>
+          <p>Carefully selected Jain couples for the inaugural cohort</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__number">Jun '26</div>
+          <h3>Cohort 1 Starts</h3>
+          <p>The founding cohort. The ones who build the movement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY JEEP (dark gradient) ===== -->
+  <section class="section section--gradient">
+    <div class="container">
+      <div class="section__header">
+        <p class="label">The Opportunity</p>
+        <h2>Beyond Traditional Business. Beyond Charity.<br>Purposeful Entrepreneurship.</h2>
+        <p>Not just a program. A <strong style="color: var(--secondary-light);">movement</strong> &mdash; built by couples who believe education must fundamentally change.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card card--dark">
+          <div class="card__icon card__icon--gold">&#x1F3EB;</div>
+          <h3>Build a Shraman School</h3>
+          <p>Get trained and equipped to launch and operate a Kalash or Padam school with a complete, proven education framework behind you.</p>
+        </div>
+        <div class="card card--dark">
+          <div class="card__icon card__icon--teal">&#x1F91D;</div>
+          <h3>Couple-First Design</h3>
+          <p>Schools thrive when families lead them. JEEP is designed for couples to learn, plan, and build together. Both perspectives matter.</p>
+        </div>
+        <div class="card card--dark">
+          <div class="card__icon card__icon--sage">&#x1F30D;</div>
+          <h3>Community Impact</h3>
+          <p>Create capable, ethical, self-reliant youth in your community. Address the AI-age challenge while strengthening Jain values for the next generation.</p>
+        </div>
+        <div class="card card--dark">
+          <div class="card__icon card__icon--teal">&#x1F4D0;</div>
+          <h3>Complete Framework</h3>
+          <p>You're not starting from scratch. The Shraman Framework, curriculum, learning objectives, teacher training, and Knowledge App are all built.</p>
+        </div>
+        <div class="card card--dark">
+          <div class="card__icon card__icon--gold">&#x1F465;</div>
+          <h3>Cohort Community</h3>
+          <p>Join a carefully selected group of like-minded couples. Learn together, support each other, and build a network that lasts beyond the program.</p>
+        </div>
+        <div class="card card--dark">
+          <div class="card__icon card__icon--sage">&#x1F4C8;</div>
+          <h3>Proven Model</h3>
+          <p>Pilot schools operational. Pearson certification received. PhD research underway. You're joining a system with traction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section__header">
+        <p class="label">The JEEP Journey</p>
+        <h2>From Application to School Launch</h2>
+        <p>A structured pathway that takes you from interest to running your own Shraman school.</p>
+      </div>
+      <div style="max-width: 720px; margin: 0 auto;">
+        <div class="journey-step">
+          <div class="journey-step__number">1</div>
+          <div>
+            <h3>Application &amp; Selection</h3>
+            <p>Submit your application as a couple. We carefully select 20&ndash;30 Jain couples from across India based on commitment, values alignment, and entrepreneurial readiness.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step__number">2</div>
+          <div>
+            <h3>Immersive Training</h3>
+            <p>Deep dive into the Shraman Framework, Six Domains, Four Mind Tools, and the operational model. Understand the philosophy, pedagogy, and business of running a Shraman school.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step__number">3</div>
+          <div>
+            <h3>Launch a Shraman School &mdash; or Join a Sangh Network</h3>
+            <p>Build your own school independently, or step into a <a href="pages/school-chain.html" style="color: var(--primary); font-weight: 600;">partner school chain</a> run by a Sangh or Mahatma. Sanghs get trained, JUEF-certified operators; you gain instant community credibility and ready infrastructure. JEEP prepares you for both paths.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step__number">4</div>
+          <div>
+            <h3>Planning &amp; Preparation</h3>
+            <p>Work with JUEF to plan your school: location, infrastructure, teacher recruitment, community outreach, and admissions strategy. Use the complete JUEF school setup playbook.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step__number">5</div>
+          <div>
+            <h3>Launch Support</h3>
+            <p>Ongoing mentorship, the Knowledge App for daily curriculum delivery, teacher training support, and the full JUEF network behind you as you launch and grow your school.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== SANGH CONNECTION ===== -->
+  <section class="section section--light">
+    <div class="container">
+      <div style="max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center;">
+        <div>
+          <p class="label">An Additional Pathway</p>
+          <h2 style="margin-bottom: var(--space-md);">You Don&rsquo;t Have to Build Alone.<br>Join a Sangh Network.</h2>
+          <p style="font-size: 1.05rem; color: var(--text-light); line-height: 1.8;">JEEP prepares you to launch your own school. But it also opens a second door &mdash; <strong style="color: var(--primary);">partner school chains</strong> built by Sanghs and Mahatmas across India. As a JEEP-trained couple, you bring exactly what they need. And they bring exactly what accelerates you.</p>
+        </div>
+        <div style="padding: var(--space-xl); background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border);">
+          <div style="margin-bottom: var(--space-lg);">
+            <h4 style="color: var(--primary); margin-bottom: var(--space-xs);">What You Get</h4>
+            <p style="font-size: 0.92rem; color: var(--text-light);">Instant recognition within an established Sangh network. Ready infrastructure and community trust. You don&rsquo;t start from zero &mdash; you step into a role built for you.</p>
+          </div>
+          <div>
+            <h4 style="color: var(--secondary); margin-bottom: var(--space-xs);">What the Sangh Gets</h4>
+            <p style="font-size: 0.92rem; color: var(--text-light);">A trained, JUEF-certified couple who understands the Shraman system inside out &mdash; ready to operate their schools with competence and conviction. No more searching for the right people.</p>
+          </div>
+          <div style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--border);">
+            <a href="pages/school-chain.html" style="font-size: 0.9rem; font-weight: 600; color: var(--primary);">Explore School Chain Partnerships &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== WHO IS JEEP FOR (dark gradient) ===== -->
+  <section class="section section--gradient">
+    <div class="container">
+      <div class="section__header">
+        <p class="label">Is JEEP for You?</p>
+        <h2>JEEP Is Built for Couples Who...</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card card--dark">
+          <h3>&#x2714; Believe education needs fundamental change</h3>
+          <p>You see that current schools aren't preparing children for the AI age. You want to be part of the solution, not just a critic.</p>
+        </div>
+        <div class="card card--dark">
+          <h3>&#x2714; Want purposeful entrepreneurship</h3>
+          <p>You're looking for something beyond traditional business. Something that creates community impact while building a sustainable institution.</p>
+        </div>
+        <div class="card card--dark">
+          <h3>&#x2714; Value Jain principles in action</h3>
+          <p>You want your children, and your community's children, to grow up with Ahimsa, Satya, and Aparigraha as lived values, not just words.</p>
+        </div>
+        <div class="card card--dark">
+          <h3>&#x2714; Are ready to build as a team</h3>
+          <p>You and your spouse are aligned on this vision. You believe that building a school is a family mission, not just a business venture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <p class="label">Common Questions</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div style="max-width: 720px; margin: 0 auto;">
+        <div class="faq-item">
+          <button class="faq-question">What is included in the JEEP program?</button>
+          <div class="faq-answer">
+            <p>The JEEP program includes immersive training for both husband and wife on the Shraman Framework, operational training for running a school, business planning support, and access to the JUEF cohort community. You'll gain everything needed to understand the model and prepare for launching a school.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do we need education experience to apply?</button>
+          <div class="faq-answer">
+            <p>No prior education experience is required. JEEP is designed to give you everything you need. What we look for is commitment, values alignment, entrepreneurial mindset, and a genuine desire to impact education in your community. The Shraman Framework and JUEF support system provide the education expertise.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Why do both husband and wife need to participate?</button>
+          <div class="faq-answer">
+            <p>Running a school is a family commitment. Our experience shows that schools thrive when both partners understand the vision, philosophy, and operations. The couple format ensures alignment at home, diverse perspectives in decision-making, and a stronger foundation for a sustainable institution.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is this only for Jain families?</button>
+          <div class="faq-answer">
+            <p>The first cohort is focused on Jain couples, as the Shraman Framework draws from Jain philosophical traditions, and the initial community network is within the Jain ecosystem. However, the education framework itself creates CAPABLE humans regardless of background &mdash; the philosophy is universal, even if the wisdom tradition is specific.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What does it take to launch a school?</button>
+          <div class="faq-answer">
+            <p>Launching a school requires careful preparation, infrastructure development, teacher training, and community engagement. JEEP prepares you thoroughly so you understand every aspect of the model, the operational requirements, and what it takes to build a sustainable institution that serves your community for generations.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How are couples selected?</button>
+          <div class="faq-answer">
+            <p>Selection is based on values alignment with the Shraman philosophy, entrepreneurial readiness, community standing, vision for education, and genuine commitment to building institutions. We're looking for founding couples who will build the movement, not just attend a program.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What certifications will our school have?</button>
+          <div class="faq-answer">
+            <p>Shraman schools use JUEF Baseline Examinations through Class VIII. For Class X and XII, we&rsquo;ve partnered with Pearson (international) and NIOS (India). Your students will have fully recognised qualifications at every stage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPLICATION FORM ===== -->
+  <section class="section section--gradient" id="apply">
+    <div class="container">
+      <div class="grid grid--2" style="align-items: start;">
+        <div>
+          <p class="label">Cohort 1 — Limited to 20&ndash;30 Couples</p>
+          <h2>Apply to JEEP</h2>
+          <p style="font-size: 1.1rem; margin-bottom: var(--space-2xl);">This is the founding cohort. The couples who join now will be the ones who shape the Shraman school movement across India. If this resonates with you, we'd love to hear from you.</p>
+
+          <div class="quote-block" style="border-left-color: var(--secondary-light);">
+            <p style="color: rgba(255,255,255,0.85); font-style: italic;">"Education is a family mission. JEEP is designed for couples who want to build something meaningful together &mdash; a school rooted in 2,500 years of wisdom, prepared for the AI age."</p>
+          </div>
+
+          <div style="margin-top: var(--space-2xl);">
+            <h4 style="color: var(--white);">What Happens After You Apply:</h4>
+            <p style="font-size: 0.95rem; margin-top: var(--space-sm);">Our team reviews every application personally. Selected couples will be invited for a conversation to discuss alignment, expectations, and next steps. You'll hear from us within 7 working days of submitting your application.</p>
+          </div>
+        </div>
+
+        <div class="apply-form">
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Husband's Full Name *</label>
+                <input type="text" name="husband_name" required placeholder="Full name">
+              </div>
+              <div class="form-group">
+                <label>Wife's Full Name *</label>
+                <input type="text" name="wife_name" required placeholder="Full name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" name="email" required placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>City &amp; State *</label>
+              <input type="text" name="location" required placeholder="e.g., Ahmedabad, Gujarat">
+            </div>
+            <div class="form-group">
+              <label>Current Occupation (Both) *</label>
+              <input type="text" name="occupation" required placeholder="e.g., Business / Homemaker">
+            </div>
+            <div class="form-group">
+              <label>Why are you interested in JEEP? *</label>
+              <textarea name="motivation" required placeholder="Tell us what draws you to building a Shraman school..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>How did you hear about JUEF?</label>
+              <select name="source">
+                <option value="">Select one</option>
+                <option value="social_media">Social Media</option>
+                <option value="community">Jain Community / Sangh</option>
+                <option value="friend_family">Friend or Family</option>
+                <option value="event">Event or Webinar</option>
+                <option value="website">Website / Search</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--primary btn--large" style="width: 100%;">Submit Application</button>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: var(--space-sm); text-align: center;">Limited to 20&ndash;30 couples. Applications reviewed on a rolling basis.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>JUEF<span>online</span></h3>
+          <p>Jain Universal Education Foundation. Creating capable humans for the AI age through 2,500 years of Shraman wisdom.</p>
+          <div class="footer__social">
+            <a href="https://x.com/juefonline" aria-label="X" target="_blank"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.linkedin.com/company/juefonline/" aria-label="LinkedIn" target="_blank"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://instagram.com/juefonline" aria-label="Instagram" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.88 0 1.441 1.441 0 012.88 0z"/></svg></a>
+            <a href="https://facebook.com/juefonline" aria-label="Facebook" target="_blank"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://youtube.com/@juefonline" aria-label="YouTube" target="_blank"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="https://pinterest.com/juefonline" aria-label="Pinterest" target="_blank"><svg viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Framework</h4>
+          <ul>
+            <li><a href="pages/framework.html">Shraman Framework</a></li>
+            <li><a href="pages/kalash.html">Kalash School</a></li>
+            <li><a href="pages/padam.html">Padam School</a></li>
+            <li><a href="pages/shikhar.html">Shikhar School</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="pages/contribute.html">Partner</a></li>
+            <li><a href="pages/give.html">Contribute</a></li>
+            <li><a href="jeep.html">JEEP Program</a></li>
+            
+            <li><a href="pages/blog.html">Insights</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="pages/about.html">About JUEF</a></li>
+            <li><a href="pages/contact.html">Contact Us</a></li>
+            <li><a href="mailto:info@juefonline.org">info@juefonline.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; 2026 Jain Universal Education Foundation. All rights reserved.
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">Registered under Section 8 of the Companies Act, 2013 &nbsp;|&nbsp; CIN: U85212MP2024NPL072149 &nbsp;|&nbsp; 12A Registration: AAGCJ5168H25BP01 &nbsp;|&nbsp; 80G Registration: AAGCJ5168H25BP02</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

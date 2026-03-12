@@ -1,0 +1,149 @@
+/* ============================================
+   Responsive Breakpoints — juefonline.org
+   Dramatic Cinematic Design System
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+  .hero__stats { gap: var(--space-xl); }
+  .jeep-stats { gap: var(--space-xl); }
+  .big-statement { font-size: clamp(1.3rem, 2.5vw, 2rem); }
+
+  /* Leader quote */
+  .leader-quote__inner { gap: var(--space-2xl); }
+
+  /* Cinema sections */
+  .cinema { min-height: 55vh; }
+  .cinema--tall { min-height: 65vh; }
+  .cinema__content h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+
+  /* Split */
+  .split { min-height: 400px; }
+  .split__text { padding: var(--space-2xl); }
+
+  /* Dual cinema panels */
+  .cinema-dual { min-height: 45vh; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  :root { --nav-height: 64px; }
+
+  .container { padding: 0 var(--space-md); }
+  .section { padding: var(--space-3xl) 0; }
+
+  /* Nav — dark mobile menu */
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: rgba(12,31,27,0.97);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: var(--space-lg);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  }
+  .nav__links.open { display: flex; }
+  .nav__toggle { display: block; }
+
+  /* Dropdown — inline in mobile menu */
+  .nav__dropdown-trigger::after { display: inline-block; }
+  .nav__dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255,255,255,0.04);
+    border: none;
+    box-shadow: none;
+    margin: var(--space-xs) 0 0;
+    padding: 0;
+    border-radius: var(--radius-sm);
+    display: none;
+  }
+  .nav__dropdown.open .nav__dropdown-menu { display: block; }
+  .nav__dropdown-menu li a { padding: 0.5rem 1rem; }
+  .nav__dropdown-trigger::after { transition: transform var(--transition); }
+  .nav__dropdown.open .nav__dropdown-trigger::after { transform: rotate(180deg); }
+
+  /* Grids */
+  .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
+
+  /* Hero */
+  .hero { min-height: 90vh; padding-top: calc(var(--nav-height) + var(--space-xl)); }
+  .hero__actions { flex-direction: column; }
+  .hero__actions .btn { width: 100%; text-align: center; }
+  .hero__stats { flex-direction: column; gap: var(--space-lg); margin-top: var(--space-2xl); }
+  .hero__image { width: 100%; opacity: 0.12; }
+  .hero__image::after { background: linear-gradient(to bottom, var(--bg-darker) 0%, rgba(7,20,17,0.6) 40%, rgba(26,107,94,0.4) 100%); }
+  .hero::after { width: 250px; height: 250px; top: 5%; right: -10%; }
+
+  /* Cinema — full-bleed image sections */
+  .cinema { min-height: 50vh; }
+  .cinema--short { min-height: 45vh; }
+  .cinema--tall { min-height: 60vh; }
+  .cinema__content { padding: var(--space-2xl) var(--space-md); }
+  .cinema__content h2 { font-size: clamp(1.5rem, 5vw, 2.2rem); }
+  .cinema--light .cinema__bg::after {
+    background: linear-gradient(to bottom, rgba(7,20,17,0.85) 0%, rgba(7,20,17,0.75) 100%);
+  }
+
+  /* Split — stack vertically */
+  .split { grid-template-columns: 1fr; min-height: auto; }
+  .split--reverse { direction: ltr; }
+  .split__image { min-height: 300px; }
+  .split__text { padding: var(--space-2xl) var(--space-md); }
+
+  /* Dual cinema — stack */
+  .cinema-dual { grid-template-columns: 1fr; min-height: auto; }
+  .cinema-dual__panel { min-height: 300px; }
+
+  /* JEEP */
+  .jeep-stats { flex-direction: column; gap: var(--space-md); align-items: center; }
+  .jeep-stat { min-width: 200px; }
+  .jeep-highlight { padding: var(--space-xl); }
+
+  /* Leader quote — stack on mobile */
+  .leader-quote__inner { grid-template-columns: 1fr; gap: var(--space-xl); text-align: center; }
+  .leader-quote__left { padding-left: 0; padding-top: var(--space-xl); }
+  .leader-quote__left::before { left: 50%; transform: translateX(-50%); top: -0.4em; }
+  .leader-quote__right { order: -1; }
+
+  /* Big statement */
+  .big-statement { font-size: clamp(1.2rem, 4vw, 1.6rem); padding: var(--space-2xl) 0; }
+
+  /* Footer */
+  .footer__grid { grid-template-columns: 1fr; }
+
+  /* Schools */
+  .school-card { padding: var(--space-xl); }
+
+  /* Cards in dark sections */
+  .card--dark { padding: var(--space-xl); }
+
+  /* CTA */
+  .cta-section { padding: var(--space-3xl) 0; }
+  .cta-section .btn { width: 100%; }
+
+  /* Section headers */
+  .section__header { margin-bottom: var(--space-2xl); }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .btn--large { padding: 0.85rem 1.5rem; font-size: 0.95rem; }
+  .hero__stat-number { font-size: 1.8rem; }
+  .jeep-stat__number { font-size: 2rem; }
+  .domain-card__emoji { font-size: 2.2rem; }
+  .card__icon { width: 48px; height: 48px; }
+  .hero::before { animation: none; }
+  .hero::after { display: none; }
+  .cinema { min-height: 40vh; }
+  .split__image { min-height: 250px; }
+}

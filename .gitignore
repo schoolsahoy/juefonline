@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Fuse artifacts
+.fuse_hidden*
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Thumbnails
+Thumbs.db
+
+# Node (in case added later)
+node_modules/

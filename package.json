@@ -1,0 +1,9 @@
+{
+  "name": "juefonline",
+  "private": true,
+  "type": "module",
+  "description": "juefonline.org — static site + /api form endpoint (Vercel)",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0"
+  }
+}

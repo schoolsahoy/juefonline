@@ -122,10 +122,11 @@
               <div style="padding: var(--space-lg); background: rgba(26,107,94,0.08); border-radius: var(--radius-md); border: 1px solid rgba(26,107,94,0.15);">
                 <p style="font-size: 1.05rem; font-weight: 600; color: var(--primary); margin-bottom: var(--space-sm);">The Jain RTE Program launches in January 2027.</p>
                 <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: var(--space-md);">Be the first to know when registrations open.</p>
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; gap: var(--space-sm); align-items: center; max-width: 560px; flex-wrap: wrap;">
+                <form action="/api/submit" method="POST" data-form="give" data-success-title="You're on the list!" data-success-message="We'll message you on WhatsApp when Jain RTE registrations open." style="display: flex; gap: var(--space-sm); align-items: center; max-width: 560px; flex-wrap: wrap;">
                   <input type="text" name="name" placeholder="Your name" required style="flex: 1; min-width: 140px; padding: 0.7rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-md); font-size: 0.95rem; font-family: inherit; background: var(--white); color: var(--text);">
                   <input type="tel" name="whatsapp" placeholder="WhatsApp number" required style="flex: 1; min-width: 160px; padding: 0.7rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-md); font-size: 0.95rem; font-family: inherit; background: var(--white); color: var(--text);">
-                  <input type="hidden" name="_subject" value="Jain RTE — Notify Me">
+                  <input type="hidden" name="form_type" value="give">
+                  <div class="form-honeypot" aria-hidden="true"><label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
                   <button type="submit" class="btn btn--primary" style="white-space: nowrap;">Notify Me</button>
                 </form>
               </div>
@@ -329,5 +330,6 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/form.js"></script>
 </body>
 </html>

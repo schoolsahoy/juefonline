@@ -352,3 +352,11 @@ p{margin-bottom:var(--space-md)}
 .leader-quote__name{font-size:1.05rem;font-weight:800;color:var(--primary);letter-spacing:-0.01em;line-height:1.3}
 .leader-quote__title{font-size:0.82rem;color:var(--text-light);letter-spacing:0.02em;line-height:1.4}
 .leader-quote__accent{width:32px;height:3px;background:var(--secondary);border-radius:2px}
+
+/* ===== FORM SUBMISSION STATES (js/form.js) ===== */
+.form-honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-note{margin-top:var(--space-sm);font-size:0.9rem;color:#b3402a;text-align:center}
+.form-note:empty{display:none}
+.form-success{padding:var(--space-2xl) var(--space-lg);text-align:center;background:rgba(26,107,94,0.06);border:1px solid rgba(26,107,94,0.2);border-radius:var(--radius-md)}
+.form-success h3{color:var(--primary);margin-bottom:var(--space-sm)}
+.form-success p{margin-bottom:0;color:var(--text-light)}

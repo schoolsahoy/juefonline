@@ -12,7 +12,7 @@ import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import handler from '../api/submit.js';
 
-const PORT = process.env.PORT || 8799;
+const PORT = process.env.PORT || 8941;
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const MIME = {
   '.html': 'text/html; charset=utf-8',

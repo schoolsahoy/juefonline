@@ -5,5 +5,9 @@
   "description": "juefonline.org — static site + /api form endpoint (Vercel)",
   "dependencies": {
     "@neondatabase/serverless": "^1.0.0"
+  },
+  "devDependencies": {
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.5"
   }
 }
